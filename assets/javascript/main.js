@@ -21,7 +21,7 @@ function submitButtonClicked() {
 
 function searchGif(gifName) {
     $.ajax({
-            url: 'https://api.giphy.com/v1/gifs/search?q= ' + gifName + ' &api_key=dc6zaTOxFJmzC',
+            url: 'https://api.giphy.com/v1/gifs/search?q= ' + gifName + ' &api_key=XMzP5qkZmHM8BALWvxncgE2fr8HRwws8',
             type: 'GET',
         })
         .done(function(response) {
