@@ -1,21 +1,22 @@
-var athletesArray = ["Kobe Bryant", "Michael Jordan", "Larry Bird", "Steve Young", "Troy Aikman"];
+var singersArray = ["Aretha Franklin", "Al Green", "Elvis", "Merl Haggard", "Frank Sinatra"];
 
 $(document).ready(function() {
-    for (var i = 0; i < athletesArray.length; i++) {
-        $("#athlete-buttons").append("<button type='button' onclick='searchGif(\"" + athletesArray[i] + "\")' class='btn btn-primary' value=' " + athletesArray[i] + "'> " + athletesArray[i] + " </button>");
+    for (var i = 0; i < singersArray.length; i++) {
+        $("#singer-buttons").append("<button type='button' onclick='searchGif(\"" + singersArray[i]
+         + "\")' class='btn btn-primary' value=' " + singersArray[i] + "'> " + singersArray[i] + " </button>");
     }
 });
 
-function athleteButtonClicked() {
-    var userInput = $('#athlete-input').val();
+function singerButtonClicked() {
+    var userInput = $('#singer-input').val();
     searchGif(userInput);
 }
 
 function submitButtonClicked() {
-    var userInput = $('#athlete-input').val();
+    var userInput = $('#singer-input').val();
 
     if (userInput) {
-        $('#athlete-buttons').append("<button type='button' onclick='searchGif(\"" + userInput + "\")' class='btn btn-primary' value=' " + userInput + "'> " + userInput + " </button>");
+        $('#singer-buttons').append("<button type='button' onclick='searchGif(\"" + userInput + "\")' class='btn btn-primary' value=' " + userInput + "'> " + userInput + " </button>");
     }
 }
 
@@ -30,7 +31,7 @@ function searchGif(gifName) {
 }
 
 function displayGif(response) {
-    $('#athletes').empty();
+    $('#singers').empty();
     for (var i = 0; i < response.data.length; i++) {
         var rating = "<div class='ratings'> Rating:  " + (response.data[i].rating) + " </div>";
         var image = rating + '<img src= " ' + response.data[i].images.fixed_height_still.url +
@@ -38,7 +39,7 @@ function displayGif(response) {
             ' " data-animate=" ' + response.data[i].images.fixed_height.url + '" data-state="still" class="movImage" style= "width:250px; height:250px">';
 
         image = '<div class="col-md-4">' + image + "</div>";
-        $('#athletes').append(image);
+        $('#singers').append(image);
     }
 
     $('.movImage').on('click', function() {
