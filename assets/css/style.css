@@ -1,17 +1,9 @@
-body {
-    background: url("http://coresports.ie/wp-content/uploads/2013/06/Depositphotos_14809399_l-e1371574614998.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 h1 {
     font-family: Lobster;
 }
 
 .ratings {
-    color: yellow;
+    color: lightblue;
     font-family: avenir;
     font-size: 18px;
 }
@@ -23,7 +15,7 @@ h1 {
 
 .btn-primary {
     margin-left: 10px;
-    background: yellow;
+    background: lightblue;
     color: blue;
 }
 

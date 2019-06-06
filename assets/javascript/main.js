@@ -1,9 +1,9 @@
-var singersArray = ["Aretha Franklin", "Al Green", "Elvis", "Merl Haggard", "Frank Sinatra"];
+var topics = ["Aretha Franklin", "Al Green", "Elvis", "Merl Haggard", "Frank Sinatra"];
 
 $(document).ready(function() {
-    for (var i = 0; i < singersArray.length; i++) {
-        $("#singer-buttons").append("<button type='button' onclick='searchGif(\"" + singersArray[i]
-         + "\")' class='btn btn-primary' value=' " + singersArray[i] + "'> " + singersArray[i] + " </button>");
+    for (var i = 0; i < topics.length; i++) {
+        $("#singer-buttons").append("<button type='button' onclick='searchGif(\"" + topics[i]
+         + "\")' class='btn btn-primary' value=' " + topics[i] + "'> " + topics[i] + " </button>");
     }
 });
 
@@ -22,7 +22,7 @@ function submitButtonClicked() {
 
 function searchGif(gifName) {
     $.ajax({
-            url: 'https://api.giphy.com/v1/gifs/search?q= ' + gifName + ' &api_key=XMzP5qkZmHM8BALWvxncgE2fr8HRwws8',
+            url: 'https://api.giphy.com/v1/gifs/search?q= ' + gifName + ' &api_key=XMzP5qkZmHM8BALWvxncgE2fr8HRwws8&limit=10',
             type: 'GET',
         })
         .done(function(response) {
